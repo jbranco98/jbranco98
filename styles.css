@@ -120,3 +120,75 @@ footer {
     border-top: 2px solid #333;
     color: #888;
 }
+/* Future Topics page styles */
+.future-topics-container {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.future-topics-container p {
+    font-size: 1.25rem;
+    color: #00ff00;
+    margin-bottom: 20px;
+}
+
+.suggestion-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.suggestion-form label {
+    font-weight: bold;
+    color: #00ff00;
+}
+
+.suggestion-form textarea,
+.suggestion-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    background-color: #121212;
+    color: #00ff00;
+    font-size: 1rem;
+}
+
+.suggestion-form textarea::placeholder,
+.suggestion-form input::placeholder {
+    color: #555;
+}
+
+.suggestion-form button {
+    align-self: center;
+    padding: 10px 20px;
+    background-color: #333;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.suggestion-form button:hover {
+    background-color: #00ff00;
+    color: #121212;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
