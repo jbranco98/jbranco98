@@ -192,3 +192,62 @@ footer {
 .back-link:hover {
     text-decoration: underline;
 }
+/* Posts container */
+.posts-container {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: left;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.posts-container h1 {
+    color: #00ff00;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#posts-list {
+    list-style: none;
+    padding: 0;
+}
+
+#posts-list a {
+    text-decoration: none;
+    color: #00ff00;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#posts-list a:hover {
+    text-decoration: underline;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #00ff00;
+    padding: 5px 10px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    background-color: #333;
+}
+
+.pagination a:hover {
+    background-color: #00ff00;
+    color: #121212;
+}
+
+.pagination .active {
+    background-color: #00ff00;
+    color: #121212;
+    pointer-events: none;
+}
