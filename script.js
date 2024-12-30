@@ -1,32 +1,45 @@
-// Add functionality to handle likes and comments
 document.addEventListener("DOMContentLoaded", () => {
-    const posts = document.querySelectorAll(".post");
+    const postsPerPage = 10;
+    const allPosts = [
+        { title: "Understanding x86 Assembly", link: "x86-basics.html" },
+        { title: "Intro to Malware Analysis", link: "malware-analysis.html" }
+        // Add more posts here as needed
+    ];
+    const totalPages = Math.ceil(allPosts.length / postsPerPage);
 
-    posts.forEach((post) => {
-        // Handle likes
-        const likeBtn = post.querySelector(".like-btn");
-        const likeCount = post.querySelector(".like-count");
+    const postsList = document.getElementById("posts-list");
+    const pagination = document.querySelector(".pagination");
 
-        likeBtn.addEventListener("click", () => {
-            const currentLikes = parseInt(likeCount.textContent);
-            likeCount.textContent = currentLikes + 1;
+    function loadPage(page) {
+        postsList.innerHTML = "";
+        const start = (page - 1) * postsPerPage;
+        const end = start + postsPerPage;
+
+        const postsToDisplay = allPosts.slice(start, end);
+        postsToDisplay.forEach(post => {
+            const postItem = document.createElement("article");
+            postItem.innerHTML = `<a href="${post.link}">${post.title}</a>`;
+            postsList.appendChild(postItem);
         });
 
-        // Handle comments
-        const commentForm = post.querySelector(".comment-form");
-        const commentInput = post.querySelector(".comment-input");
-        const commentsList = post.querySelector(".comments-list");
+        updatePagination(page);
+    }
 
-        commentForm.addEventListener("submit", (e) => {
-            e.preventDefault(); // Prevent form submission
+    function updatePagination(currentPage) {
+        pagination.innerHTML = "";
+        for (let i = 1; i <= totalPages; i++) {
+            const pageLink = document.createElement("a");
+            pageLink.textContent = i;
+            pageLink.href = "#";
+            pageLink.className = currentPage === i ? "active" : "";
+            pageLink.addEventListener("click", (e) => {
+                e.preventDefault();
+                loadPage(i);
+            });
+            pagination.appendChild(pageLink);
+        }
+    }
 
-            const commentText = commentInput.value.trim();
-            if (commentText !== "") {
-                const commentItem = document.createElement("li");
-                commentItem.textContent = commentText;
-                commentsList.appendChild(commentItem);
-                commentInput.value = ""; // Clear input field
-            }
-        });
-    });
+    // Load the first page by default
+    loadPage(1);
 });
