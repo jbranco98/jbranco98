@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reverse Engineering Blog</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
 </head>
 <body>
     <header>
         <h1>Sk3lex0r's Reverse Engineering Blog</h1>
         <nav>
             <a href="#posts">Posts</a>
-            <a href=about.html>About Me</a>
+            <a href="about.html">About Me</a>
             <a href="#future-topics">Future Topics</a>
         </nav>
     </header>
@@ -22,24 +23,38 @@
                 <h2>Understanding x86 Assembly</h2>
                 <p>A beginner's guide to decoding x86 assembly instructions.</p>
                 <div class="post-actions">
-                    <button>Like</button>
-                    <button>Comment</button>
+                    <button class="like-btn">Like (<span class="like-count">0</span>)</button>
+                    <button class="comment-btn">Comment</button>
+                </div>
+                <div class="comments-section">
+                    <form class="comment-form">
+                        <input type="text" placeholder="Add a comment..." class="comment-input">
+                        <button type="submit">Submit</button>
+                    </form>
+                    <ul class="comments-list"></ul>
                 </div>
             </article>
             <article class="post">
                 <h2>Intro to Malware Analysis</h2>
                 <p>Learn how to analyze and reverse engineer malware samples.</p>
                 <div class="post-actions">
-                    <button>Like</button>
-                    <button>Comment</button>
+                    <button class="like-btn">Like (<span class="like-count">0</span>)</button>
+                    <button class="comment-btn">Comment</button>
+                </div>
+                <div class="comments-section">
+                    <form class="comment-form">
+                        <input type="text" placeholder="Add a comment..." class="comment-input">
+                        <button type="submit">Submit</button>
+                    </form>
+                    <ul class="comments-list"></ul>
                 </div>
             </article>
         </section>
         <aside>
-            <h3>Socials</h3>
+            <h3>Sk3lex0r</h3>
             <ul>
-                <li><a href="https://github.com/jbranco98" target="_blank">GitHub</a></li>
-                <li><a href="https://linkedin.com/in/jacob-branco" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/your-github" target="_blank">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a></li>
             </ul>
         </aside>
     </main>
